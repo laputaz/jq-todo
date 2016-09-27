@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <link rel="stylesheet" type="text/css" href="Todo.css" />
+        <meta charset="utf-8">
+        <title>Todo</title>
+    </head>
+    <body>
+   <div class="todoApp-container">
+        <div class="header">
+           <h1>待办事项</h1>
+           <input id="do" type="text" name="todoContent" placeholder="&nbsp&nbsp接下来做什么？" />       
+           </div>
+        <div class="something">
+            <div class="checkAll">
+            <input class="check" type="checkbox" id="check_0"/>
+            <label for="check_0"></label>
+            <p>标记所有为完成</p>
+            </div>
+            <div class="things">
+            </div>
+        </div>
+    <footer>
+    <span id="left_num"></span>
+    <p>&nbsp清空已完成事项&nbsp</p>
+    </footer>
+   </div>
+    <div class="instructions">
+        双击事件以编辑
+    </div>
+    <div class="credit">
+    Created by <br /> 
+    Z&nbspDH   <br /> 
+    Github:<a href="https://github.com/Border-Line">Border-Line.</a><br /> 
+    </div>
+   <script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.js"></script>
+   <script type="text/javascript" src="todo.js"></script>
+    </body>
+</html>
