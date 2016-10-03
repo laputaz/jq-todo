@@ -2,13 +2,19 @@
 * @Author: Marte
 * @Date:   2016-09-01 12:06:47
 * @Last Modified by:   Marte
-* @Last Modified time: 2016-09-27 16:54:51
+* @Last Modified time: 2016-10-03 15:03:02
 */
 
 body{
     font-family: 'Inziu IosevkaCC SC';
     margin:0;
     background-color: #eee;
+}
+#Mycanvas{
+    background-color: #eee;
+    position: absolute;
+    top: 0;
+    z-index: -1;
 }
 .todoApp-container{
     background-color: #fff;
@@ -20,8 +26,9 @@ body{
 }
 h1{
     margin:0 auto;
-    padding:40px 0 20px;
+    padding:40px 18px 20px 0;
     width:150px;
+    text-align: center;
 }
 #do{
     background-color: #eee;
@@ -40,6 +47,7 @@ h1{
 }
 
 label{
+    color:#9a9a9a;
     display:inline-block;
     position: relative;
     top:2px;
@@ -48,13 +56,14 @@ label{
     width:12px;
     height:12px;
     border:1px solid #ddd;
-    border-radius:2px;
+    border-radius:50%;
     transition: background-color 0.5s;
 }
 label:hover{
     background-color: #ddd;
 }
 .check:checked+label::after{
+    color:#9a9a9a;
     position:absolute;
     top: -1px;
     left:-1px;
@@ -64,12 +73,13 @@ label:hover{
     background-color: #eee;
     border:1px solid #ddd;
     text-align: center;
-    border-radius:2px;
+    border-radius:50%;
     line-height: 12px;
 }
 .checkAll{
-/*    padding:5px 15px ;*/
     display:none;
+    width:520px;
+    border-bottom: 1px solid #ddd;
 }
 .checkAll p{
     color:#a9abab;
@@ -82,7 +92,7 @@ label:hover{
     display:none;
     position:relative;
     width:520px;
-    border-top: 1px solid #eee;
+    border-bottom: 1px solid #ddd;
 }
 .things p{
     position:relative;
@@ -134,7 +144,7 @@ footer{
 }
 span{
     display:inline-block;
-    width:86px;
+    width:120px;
     text-align: center;
     line-height: 40px;
 }
@@ -142,9 +152,9 @@ footer p{
     display:none;
     font-size: 0.8em;
     border:1px solid #eee;
-    border-radius: 6px;;
+    border-radius: 3px;
     float: right;
-    margin:10px 10px;
+    margin:10px 7px;
     background-color: rgba(0, 0, 0, 0.1);
     line-height:20px;
     transition:background-color 0.3s;
@@ -165,6 +175,7 @@ footer p:hover{
 a{
     font-size: 0.9em;;
     text-decoration: none;
+    color:#797979;
 
 }
 .credit a:hover,a:visited{

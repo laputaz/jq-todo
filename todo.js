@@ -2,11 +2,11 @@
 * @Author: Marte
 * @Date:   2016-09-19 09:15:33
 * @Last Modified by:   Marte
-* @Last Modified time: 2016-09-27 16:35:00
+* @Last Modified time: 2016-10-03 14:51:18
 */
 
 $(document).ready(function(){
-
+$("#do").focus();
 //获取最后一个待办时间的id的数字
 function getThingId(){
      var childNum=$(".things").children().length;
@@ -65,7 +65,8 @@ function getThingId(){
 $("#do").keydown(function(event) {
   /* Act on the event */
   if(event.which==13)  
-      {if($("#do").val())
+      {
+        if($("#do").val())
         {
         addNewThings();
         $(".every:last").show("fast");
@@ -79,7 +80,7 @@ $("#do").keydown(function(event) {
 //双击弹出编辑框，如果不为空，回车即可改变内容
 $(document).on("dblclick",".every p",function(){
     var cc=$(this).text();
-    $(this).parent().find("input._edit").show("fast").focus().val(cc);
+    $(this).parent().find("input._edit").show().focus().val(cc);
     $("._edit").keydown(function(event) {
     if(event.which==13)
       {
@@ -99,9 +100,7 @@ $(document).on("blur","._edit",function(event) {
       $("._edit").each(function(){
         $(this).hide();      
       });
-
         });
-
 
 //删除事件
 $(document).on("click", ".close_button",function() {
@@ -115,11 +114,13 @@ $(document).on("click", ".close_button",function() {
 $(document).on("change","#check_0",function() {
   var con=$(this).is(":checked");
   if (con) {  
-         $(".check[id!='check_0']").each(function(){$(this).prop("checked",true);});
-        $(".checkAll").children("p").text("取消全部选择");       
+        $(".check[id!='check_0']").each(function(){$(this).prop("checked",true);});
+        $(".checkAll").children("p").text("cancal all markup");
+        $(".checkAll").css("background-color","#eee");       
       }else{
-         $(".check[id!='check_0']").each(function(){$(this).prop("checked",false);});
-         $(".checkAll").children("p").text("标记所有为完成");
+        $(".check[id!='check_0']").each(function(){$(this).prop("checked",false);});
+        $(".checkAll").children("p").text("Mark all as complete");
+        $(".checkAll").css("background-color","#fff"); 
       }
 
 });
@@ -138,7 +139,6 @@ $(document).on("change",".check",function() {
       $(this).parent().find("p").css({"text-decoration":"none","color":"#000"});
       $(this).parent().css({"background-color":"#fff"});
     }
-
 }); 
   don();
 });
@@ -146,11 +146,10 @@ $(document).on("change",".check",function() {
   //改变页脚的剩余事件数量显示
 function don(){
   var count=$(".check[id!='check_0']").length;
-   $("#left_num").html(leftNum()+"&nbsp件剩余");
+   $("#left_num").html(leftNum()+"&nbsp item left");
 
    //如果剩余事件不为零，显示footer和checkAll
    if(leftNum()!=0){
-
     $(".checkAll").show("fast");
     $("footer").show("fast");
    }
@@ -163,22 +162,23 @@ function don(){
 
    //确保所有项目打上勾时“选择所有也打上勾”
    if((count!=0) && (leftNum()==0)){
-
         $("#check_0").prop("checked",true);
+        $(".checkAll").css("background-color","#eee");
    }else{
         $("#check_0").prop("checked",false);
+        $(".checkAll").css("background-color","#fff");
    }
 
    //如果事件列表不为空，而且剩余数目少于事件列表，即有事件被checked
    if (count!=0 && leftNum()<count) {
-        $("footer").find("p").show("fast");
+        $("footer p").show("fast");
    }else{
-        $("footer").find("p").hide("fast");
+        $("footer p").hide("fast");
    }
   }
 
 //清除已完成事件
-$("footer").find("p").click(function() {
+$("footer p").click(function() {
   $(".check[id!='check_0']").each(function(){
     var con=$(this).is(":checked");
     if(con){
