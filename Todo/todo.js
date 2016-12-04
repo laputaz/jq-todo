@@ -1,8 +1,8 @@
 /* 
-* @Author: Marte
+* @Author: zdh
 * @Date:   2016-09-19 09:15:33
 * @Last Modified by:   Marte
-* @Last Modified time: 2016-10-03 14:51:18
+* @Last Modified time: 2016-12-04 21:40:09
 */
 
 $(document).ready(function(){
@@ -115,11 +115,11 @@ $(document).on("change","#check_0",function() {
   var con=$(this).is(":checked");
   if (con) {  
         $(".check[id!='check_0']").each(function(){$(this).prop("checked",true);});
-        $(".checkAll").children("p").text("cancal all markup");
+        $(".checkAll").children("p").text("取消所有标记");
         $(".checkAll").css("background-color","#eee");       
       }else{
         $(".check[id!='check_0']").each(function(){$(this).prop("checked",false);});
-        $(".checkAll").children("p").text("Mark all as complete");
+        $(".checkAll").children("p").text("标记所有为完成");
         $(".checkAll").css("background-color","#fff"); 
       }
 
@@ -146,7 +146,7 @@ $(document).on("change",".check",function() {
   //改变页脚的剩余事件数量显示
 function don(){
   var count=$(".check[id!='check_0']").length;
-   $("#left_num").html(leftNum()+"&nbsp item left");
+   $("#left_num").html(leftNum()+"&nbsp 项剩余");
 
    //如果剩余事件不为零，显示footer和checkAll
    if(leftNum()!=0){

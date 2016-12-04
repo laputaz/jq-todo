@@ -1,0 +1,13 @@
+/* 
+* @Author: Marte
+* @Date:   2016-10-09 18:52:56
+* @Last Modified by:   Marte
+* @Last Modified time: 2016-10-09 19:01:34
+*/
+#chess{
+    display: block;
+    margin: 0 auto;
+    box-shadow: -2px -2px 2px #efefef,5px 5px 5px #b9b9b9;
+    width: 450px;
+    height: 450px;
+}

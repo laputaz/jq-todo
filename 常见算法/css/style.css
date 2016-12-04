@@ -1,0 +1,17 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.left{
+    float: left;
+    margin-left: 20px;
+    background-color: #eee;
+    width: 200px;
+    min-height: 200px;
+}
+.right{
+    background-color: #dfd;
+    margin-left:200px;
+    margin-right: 20px;
+
+}
